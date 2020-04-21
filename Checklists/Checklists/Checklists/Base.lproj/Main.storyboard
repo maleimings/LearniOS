@@ -192,7 +192,7 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="done" destination="CEb-m5-ZZd" eventType="editingDidEndOnExit" id="GSa-Oi-m3e"/>
-                                                        <outlet property="delegate" destination="WVF-aQ-REB" id="4RI-ab-LmA"/>
+                                                        <outlet property="delegate" destination="WVF-aQ-REB" id="g0F-Yq-lQf"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -212,14 +212,15 @@
                                 <action selector="cancel" destination="CEb-m5-ZZd" id="UIO-PM-r3B"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="4Bb-6V-XR8">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="4Bb-6V-XR8">
                             <connections>
                                 <action selector="done" destination="CEb-m5-ZZd" id="Vk0-HE-8Ag"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="textField" destination="omm-F6-E7F" id="j7o-nL-ZQW"/>
+                        <outlet property="doneBarButton" destination="4Bb-6V-XR8" id="i7f-gI-dak"/>
+                        <outlet property="textField" destination="omm-F6-E7F" id="z3c-ar-Tmu"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7pO-SU-26T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
