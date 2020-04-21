@@ -11,10 +11,11 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
         return true
     }
 
@@ -30,6 +31,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        saveData()
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        saveData()
+    }
+    
+    func saveData() {
+        let navigationController = window!.rootViewController
+                                    as! UINavigationController
+        
+        let controller = navigationController.viewControllers[0]
+                            as! AllListsViewController
+        controller.saveChecklists()
     }
 
 
