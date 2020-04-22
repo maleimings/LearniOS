@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E32D0A972450523200162CAD /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32D0A962450523200162CAD /* DataModel.swift */; };
 		E350C9A42448A0E9006FFCDC /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E350C9A32448A0E9006FFCDC /* ItemDetailViewController.swift */; };
 		E3B930B02444A73C005480CF /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B930AF2444A73C005480CF /* ChecklistItem.swift */; };
 		E3D32B4C244DCD48000EA009 /* AllListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D32B4B244DCD48000EA009 /* AllListsViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E32D0A962450523200162CAD /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		E350C9A32448A0E9006FFCDC /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		E3B930AF2444A73C005480CF /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 		E3D32B4B244DCD48000EA009 /* AllListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllListsViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				E3D32B4B244DCD48000EA009 /* AllListsViewController.swift */,
 				E3D32B4D244DD353000EA009 /* Checklist.swift */,
 				E3D32B4F244DDA0C000EA009 /* ListDetailControllerDelegate.swift */,
+				E32D0A962450523200162CAD /* DataModel.swift */,
 			);
 			path = Checklists;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				E3B930B02444A73C005480CF /* ChecklistItem.swift in Sources */,
 				E3D32B4E244DD353000EA009 /* Checklist.swift in Sources */,
 				E3D32B50244DDA0C000EA009 /* ListDetailControllerDelegate.swift in Sources */,
+				E32D0A972450523200162CAD /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
