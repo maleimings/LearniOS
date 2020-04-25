@@ -13,10 +13,11 @@
 		E32D0AAB2450719100162CAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E32D0AAA2450719100162CAD /* Assets.xcassets */; };
 		E32D0AAE2450719100162CAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E32D0AAD2450719100162CAD /* Preview Assets.xcassets */; };
 		E32D0AB12450719100162CAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E32D0AAF2450719100162CAD /* LaunchScreen.storyboard */; };
+		E3B131FA245474BB003C500D /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B131F9245474BB003C500D /* AboutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E32D0AA12450719000162CAD /* 01Bullseye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 01Bullseye.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E32D0AA12450719000162CAD /* Bullseye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bullseye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E32D0AA42450719000162CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E32D0AA62450719000162CAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E32D0AA82450719000162CAD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -24,6 +25,7 @@
 		E32D0AAD2450719100162CAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E32D0AB02450719100162CAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E32D0AB22450719100162CAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3B131F9245474BB003C500D /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +50,7 @@
 		E32D0AA22450719000162CAD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E32D0AA12450719000162CAD /* 01Bullseye.app */,
+				E32D0AA12450719000162CAD /* Bullseye.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -63,6 +65,7 @@
 				E32D0AAF2450719100162CAD /* LaunchScreen.storyboard */,
 				E32D0AB22450719100162CAD /* Info.plist */,
 				E32D0AAC2450719100162CAD /* Preview Content */,
+				E3B131F9245474BB003C500D /* AboutView.swift */,
 			);
 			path = 01Bullseye;
 			sourceTree = "<group>";
@@ -92,7 +95,7 @@
 			);
 			name = 01Bullseye;
 			productName = 01Bullseye;
-			productReference = E32D0AA12450719000162CAD /* 01Bullseye.app */;
+			productReference = E32D0AA12450719000162CAD /* Bullseye.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3B131FA245474BB003C500D /* AboutView.swift in Sources */,
 				E32D0AA52450719000162CAD /* AppDelegate.swift in Sources */,
 				E32D0AA72450719000162CAD /* SceneDelegate.swift in Sources */,
 				E32D0AA92450719000162CAD /* ContentView.swift in Sources */,
@@ -294,7 +298,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "CE.-1Bullseye";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Bullseye;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -314,7 +318,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "CE.-1Bullseye";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Bullseye;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
