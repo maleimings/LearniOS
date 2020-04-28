@@ -9,25 +9,14 @@
 import SwiftUI
 
 struct ChecklistView: View {
-    @ObservedObject var checklist = Checklist()
-    
+    @ObservedObject var checklist = Checklist()    
     @State var newChecklistItemViewIsVisible = false
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(checklist.items) { checklistItem in
-                    HStack {
-                        Text(checklistItem.name)
-                        Spacer()
-                        Text(checklistItem.isChecked ?"✅" : "🔲")
-                    }
-                    .background(Color.white)
-                    .onTapGesture {
-                        if let index = self.checklist.items.firstIndex(where: {$0.id == checklistItem.id}) {
-                            self.checklist.items[index].isChecked.toggle()
-                        }
-                    }
+                ForEach(checklist.items) { index in
+                  RowView(checklistItem: self.$checklist.items[index])
                 }
                 .onDelete(perform: checklist.deleteListitem)
                 .onMove(perform: checklist.moveListItem)
