@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jDB-9N-WyC">
     <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Bullseye-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_3Bullseye" customModuleProvider="target" sceneMemberID="viewController">
@@ -111,10 +111,19 @@
                                     <segue destination="wSt-Yt-D2X" kind="presentation" modalTransitionStyle="flipHorizontal" id="h9R-VO-Tbt"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncK-2y-vSX">
+                                <rect key="frame" x="820" y="264" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="🏆"/>
+                                <connections>
+                                    <segue destination="wGC-ke-Ue2" kind="show" id="JV4-tr-RH0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Bullseye" id="6k3-Az-io3"/>
                     <connections>
                         <outlet property="roundLabel" destination="mdA-7c-mDF" id="JIx-8g-Smt"/>
                         <outlet property="scoreLabel" destination="2ST-Ep-qgs" id="YQg-Xj-11e"/>
@@ -124,7 +133,118 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.25" y="137.68115942028987"/>
+            <point key="canvasLocation" x="529.6875" y="137.68115942028987"/>
+        </scene>
+        <!--Edit High Score-->
+        <scene sceneID="lXr-dh-Rec">
+            <objects>
+                <tableViewController id="hOG-ky-ZXp" customClass="EditHighScoreViewController" customModule="_3Bullseye" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="keX-OR-mRS">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="Tm1-Oq-MZN">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rzW-60-pxs">
+                                        <rect key="frame" x="0.0" y="18" width="896" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rzW-60-pxs" id="i52-uP-NBv">
+                                            <rect key="frame" x="44" y="0.0" width="808" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="High scorer name" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L1x-qe-wKo">
+                                                    <rect key="frame" x="20" y="-2" width="788" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <action selector="done" destination="hOG-ky-ZXp" eventType="editingDidEndOnExit" id="27d-Pf-r1W"/>
+                                                        <outlet property="delegate" destination="hOG-ky-ZXp" id="yUZ-sG-HaT"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="hOG-ky-ZXp" id="ocp-yh-hCC"/>
+                            <outlet property="delegate" destination="hOG-ky-ZXp" id="5sG-5R-rPs"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Edit High Score" id="z0b-zP-9fY">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="JER-yf-jcC">
+                            <connections>
+                                <action selector="cancel" destination="hOG-ky-ZXp" id="sBm-08-36m"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="Wck-Y0-bO1">
+                            <connections>
+                                <action selector="done" destination="hOG-ky-ZXp" id="C8k-XW-UU4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="doneBarButton" destination="Wck-Y0-bO1" id="bqA-ZP-CQq"/>
+                        <outlet property="testField" destination="L1x-qe-wKo" id="6rw-U2-wPz"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZGY-Gg-H3a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="529.6875" y="2021.7391304347827"/>
+        </scene>
+        <!--High Scores-->
+        <scene sceneID="DGD-qT-BCn">
+            <objects>
+                <viewController id="wGC-ke-Ue2" customClass="HighScoresViewController" customModule="_3Bullseye" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4BS-pm-oGU">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HighScoreItem" id="cws-Le-uuh">
+                                <rect key="frame" x="0.0" y="28" width="896" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cws-Le-uuh" id="QNV-75-Qt3">
+                                    <rect key="frame" x="44" y="0.0" width="808" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Hf-bu-8Fp">
+                                            <rect key="frame" x="400" y="11" width="408" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNU-iE-9c5">
+                                            <rect key="frame" x="20" y="10" width="392" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="hOG-ky-ZXp" kind="show" id="xfn-pD-Lle"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="High Scores" id="GdA-ga-Ttd">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="t7S-Q4-b4r">
+                            <connections>
+                                <action selector="resetHightScores" destination="wGC-ke-Ue2" id="UoZ-t1-JN4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c0u-sN-khH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="530" y="942"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="5FY-M1-Bt6">
@@ -160,7 +280,25 @@ Your goal is to place the slider as close as possible to the target value. The c
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fW-yv-5X2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="798" y="138"/>
+            <point key="canvasLocation" x="1290" y="138"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Cw6-W5-c7W">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jDB-9N-WyC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="50W-X2-irQ">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ydQ-oc-7DP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uAF-Kq-nyb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-213.61607142857142" y="137.68115942028987"/>
         </scene>
     </scenes>
     <resources>

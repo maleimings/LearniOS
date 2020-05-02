@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E3D68FC6245D9CCB00A3E33F /* HighScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68FC5245D9CCB00A3E33F /* HighScoresViewController.swift */; };
+		E3D68FC8245DA38D00A3E33F /* HighScoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68FC7245DA38D00A3E33F /* HighScoreItem.swift */; };
+		E3D68FCA245DA9DB00A3E33F /* PersistencyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68FC9245DA9DB00A3E33F /* PersistencyHelper.swift */; };
+		E3D68FCC245DB04100A3E33F /* EditHighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68FCB245DB04100A3E33F /* EditHighScoreViewController.swift */; };
 		E3FA7A73245C40BB005A5C4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FA7A72245C40BB005A5C4B /* AppDelegate.swift */; };
 		E3FA7A75245C40BB005A5C4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FA7A74245C40BB005A5C4B /* SceneDelegate.swift */; };
 		E3FA7A77245C40BB005A5C4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FA7A76245C40BB005A5C4B /* ViewController.swift */; };
@@ -18,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E3D68FC5245D9CCB00A3E33F /* HighScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoresViewController.swift; sourceTree = "<group>"; };
+		E3D68FC7245DA38D00A3E33F /* HighScoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreItem.swift; sourceTree = "<group>"; };
+		E3D68FC9245DA9DB00A3E33F /* PersistencyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistencyHelper.swift; sourceTree = "<group>"; };
+		E3D68FCB245DB04100A3E33F /* EditHighScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHighScoreViewController.swift; sourceTree = "<group>"; };
 		E3FA7A6F245C40BB005A5C4B /* 03Bullseye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 03Bullseye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3FA7A72245C40BB005A5C4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3FA7A74245C40BB005A5C4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +74,11 @@
 				E3FA7A74245C40BB005A5C4B /* SceneDelegate.swift */,
 				E3FA7A76245C40BB005A5C4B /* ViewController.swift */,
 				E3FA7A78245C40BB005A5C4B /* Main.storyboard */,
+				E3D68FCB245DB04100A3E33F /* EditHighScoreViewController.swift */,
+				E3D68FC9245DA9DB00A3E33F /* PersistencyHelper.swift */,
+				E3D68FC7245DA38D00A3E33F /* HighScoreItem.swift */,
 				E3FA7A86245C5753005A5C4B /* AboutViewController.swift */,
+				E3D68FC5245D9CCB00A3E33F /* HighScoresViewController.swift */,
 				E3FA7A7B245C40BD005A5C4B /* Assets.xcassets */,
 				E3FA7A7D245C40BD005A5C4B /* LaunchScreen.storyboard */,
 				E3FA7A80245C40BD005A5C4B /* Info.plist */,
@@ -153,10 +165,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3D68FC6245D9CCB00A3E33F /* HighScoresViewController.swift in Sources */,
+				E3D68FC8245DA38D00A3E33F /* HighScoreItem.swift in Sources */,
+				E3D68FCA245DA9DB00A3E33F /* PersistencyHelper.swift in Sources */,
 				E3FA7A77245C40BB005A5C4B /* ViewController.swift in Sources */,
 				E3FA7A73245C40BB005A5C4B /* AppDelegate.swift in Sources */,
 				E3FA7A87245C5753005A5C4B /* AboutViewController.swift in Sources */,
 				E3FA7A75245C40BB005A5C4B /* SceneDelegate.swift in Sources */,
+				E3D68FCC245DB04100A3E33F /* EditHighScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

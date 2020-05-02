@@ -63,7 +63,9 @@ class ViewController: UIViewController {
         currentValue = lroundf(slider.value)
     }
     
-    @IBAction func startOver(_ button: UIButton) {
+    @IBAction func startOver(_ button: UIButton) {        
+        addHighScores(score)
+        
         score = 0
         round = 0
         startNewRound()
@@ -93,6 +95,19 @@ class ViewController: UIViewController {
     
     func updateScore() {
         scoreLabel.text = String(score)
+    }
+    
+    func addHighScores(_ score: Int) {
+        guard score > 0 else {
+            return
+        }
+        
+        let highScore = HighScoreItem(name: "Unknow", score: score)
+        
+        var highScores = PersistencyHelper.loadHighScores()
+        highScores.append(highScore)
+        highScores.sort { $0.score > $1.score }
+        PersistencyHelper.saveHighScores(highScores)
     }
 
 }
