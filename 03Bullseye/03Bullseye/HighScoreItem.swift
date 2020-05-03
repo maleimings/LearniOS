@@ -8,7 +8,7 @@
 
 import Foundation
 
-class HighScoreItem: Codable {
+class HighScoreItem: NSObject, Codable {
     var name: String
     var score: Int
     

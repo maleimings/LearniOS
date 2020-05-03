@@ -8,8 +8,36 @@
 
 import UIKit
 
-class HighScoresViewController: UITableViewController {
+class HighScoresViewController: UITableViewController,
+                                EditHighScoreViewControllerDelegates {
+    
+    func editHighScoreViewControllerDidCancel(_ controller: EditHighScoreViewController) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func editHighScoreViewController(_ controller: EditHighScoreViewController, didFinishEditing item: HighScoreItem) {
+        
+        if let index = items.firstIndex(of: item) {
+            let indexPath = IndexPath(row: index, section: 0)
+            let indexPaths = [indexPath]
+            
+            tableView.reloadRows(at: indexPaths, with: .automatic)
+        }
+        PersistencyHelper.saveHighScores(items)
+        navigationController?.popViewController(animated: true)
+    }
+    
     var items = [HighScoreItem]()
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination as! EditHighScoreViewController
+        
+        controller.delegate = self
+        
+        if let indexPath = tableView.indexPath(for: sender as! UITableViewCell) {
+            controller.highScoreItem = items[indexPath.row]
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +74,9 @@ class HighScoresViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView,
+                            commit editingStyle: UITableViewCell.EditingStyle,
+                            forRowAt indexPath: IndexPath) {
         items.remove(at: indexPath.row)
         
         let indexPaths = [indexPath]

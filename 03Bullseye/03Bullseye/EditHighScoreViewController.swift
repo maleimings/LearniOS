@@ -8,15 +8,28 @@
 
 import UIKit
 
+
+protocol EditHighScoreViewControllerDelegates: class {
+    func editHighScoreViewControllerDidCancel(_ controller: EditHighScoreViewController)
+    
+    func editHighScoreViewController(_ controller: EditHighScoreViewController,
+                                     didFinishEditing item: HighScoreItem)
+}
+
 class EditHighScoreViewController: UITableViewController, UITextFieldDelegate {
 
     @IBOutlet weak var testField: UITextField!
     
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     
+    weak var delegate: EditHighScoreViewControllerDelegates?
+    var highScoreItem: HighScoreItem!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        testField.text = highScoreItem.name
+        doneBarButton.isEnabled = !highScoreItem.name.isEmpty
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,11 +55,12 @@ class EditHighScoreViewController: UITableViewController, UITextFieldDelegate {
     }
     
     @IBAction func cancel() {
-        navigationController?.popViewController(animated: true)
+        delegate?.editHighScoreViewControllerDidCancel(self)
     }
     
     @IBAction func done() {
-        navigationController?.popViewController(animated: true)
+        highScoreItem.name = testField.text!
+        delegate?.editHighScoreViewController(self, didFinishEditing: highScoreItem)
     }
 
 }
