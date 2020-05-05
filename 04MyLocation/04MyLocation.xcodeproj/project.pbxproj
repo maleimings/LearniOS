@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E38FD6AC246199B6002CE59C /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38FD6AB246199B6002CE59C /* LocationDetailsViewController.swift */; };
 		E3D68FDA245EFFFC00A3E33F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68FD9245EFFFC00A3E33F /* AppDelegate.swift */; };
 		E3D68FDC245EFFFC00A3E33F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68FDB245EFFFC00A3E33F /* SceneDelegate.swift */; };
 		E3D68FDE245EFFFC00A3E33F /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68FDD245EFFFC00A3E33F /* CurrentLocationViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E38FD6AB246199B6002CE59C /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		E3D68FD6245EFFFC00A3E33F /* 04MyLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 04MyLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D68FD9245EFFFC00A3E33F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3D68FDB245EFFFC00A3E33F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				E3D68FDD245EFFFC00A3E33F /* CurrentLocationViewController.swift */,
 				E3D68FDF245EFFFC00A3E33F /* SecondViewController.swift */,
 				E3D68FE1245EFFFC00A3E33F /* Main.storyboard */,
+				E38FD6AB246199B6002CE59C /* LocationDetailsViewController.swift */,
 				E3D68FE4245EFFFD00A3E33F /* Assets.xcassets */,
 				E3D68FE6245EFFFD00A3E33F /* LaunchScreen.storyboard */,
 				E3D68FE9245EFFFD00A3E33F /* Info.plist */,
@@ -145,6 +148,7 @@
 				E3D68FDE245EFFFC00A3E33F /* CurrentLocationViewController.swift in Sources */,
 				E3D68FDA245EFFFC00A3E33F /* AppDelegate.swift in Sources */,
 				E3D68FDC245EFFFC00A3E33F /* SceneDelegate.swift in Sources */,
+				E38FD6AC246199B6002CE59C /* LocationDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
