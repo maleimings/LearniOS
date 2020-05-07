@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E31300C52462EDDF0087A99D /* CategoryPickerViewCOntroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31300C42462EDDF0087A99D /* CategoryPickerViewCOntroller.swift */; };
+		E3357B5524643EBD00250570 /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3357B5424643EBD00250570 /* HudView.swift */; };
+		E3357B572464449E00250570 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3357B562464449E00250570 /* Functions.swift */; };
 		E38FD6AC246199B6002CE59C /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38FD6AB246199B6002CE59C /* LocationDetailsViewController.swift */; };
 		E3D68FDA245EFFFC00A3E33F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68FD9245EFFFC00A3E33F /* AppDelegate.swift */; };
 		E3D68FDC245EFFFC00A3E33F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D68FDB245EFFFC00A3E33F /* SceneDelegate.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		E31300C42462EDDF0087A99D /* CategoryPickerViewCOntroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewCOntroller.swift; sourceTree = "<group>"; };
+		E3357B5424643EBD00250570 /* HudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
+		E3357B562464449E00250570 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		E38FD6AB246199B6002CE59C /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		E3D68FD6245EFFFC00A3E33F /* 04MyLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 04MyLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D68FD9245EFFFC00A3E33F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 				E3D68FDD245EFFFC00A3E33F /* CurrentLocationViewController.swift */,
 				E3D68FDF245EFFFC00A3E33F /* SecondViewController.swift */,
 				E3D68FE1245EFFFC00A3E33F /* Main.storyboard */,
+				E3357B5424643EBD00250570 /* HudView.swift */,
+				E3357B562464449E00250570 /* Functions.swift */,
 				E31300C42462EDDF0087A99D /* CategoryPickerViewCOntroller.swift */,
 				E38FD6AB246199B6002CE59C /* LocationDetailsViewController.swift */,
 				E3D68FE4245EFFFD00A3E33F /* Assets.xcassets */,
@@ -150,8 +156,10 @@
 				E3D68FE0245EFFFC00A3E33F /* SecondViewController.swift in Sources */,
 				E3D68FDE245EFFFC00A3E33F /* CurrentLocationViewController.swift in Sources */,
 				E31300C52462EDDF0087A99D /* CategoryPickerViewCOntroller.swift in Sources */,
+				E3357B572464449E00250570 /* Functions.swift in Sources */,
 				E3D68FDA245EFFFC00A3E33F /* AppDelegate.swift in Sources */,
 				E3D68FDC245EFFFC00A3E33F /* SceneDelegate.swift in Sources */,
+				E3357B5524643EBD00250570 /* HudView.swift in Sources */,
 				E38FD6AC246199B6002CE59C /* LocationDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
