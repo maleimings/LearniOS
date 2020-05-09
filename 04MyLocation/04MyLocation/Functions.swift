@@ -19,3 +19,11 @@ let applicationDocumentsDirectory: URL = {
     
     return paths[0]
 }()
+
+let CoreDataSaveFiledNotification = Notification.Name("CoreDataSaveFailedNotification")
+
+func fatalCoreDataError(_ error: Error) {
+    print("fatal error \(error)")
+    
+    NotificationCenter.default.post(name: CoreDataSaveFiledNotification, object: nil)
+}

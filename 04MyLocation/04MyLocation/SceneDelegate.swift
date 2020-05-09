@@ -34,10 +34,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabController = window!.rootViewController as! UITabBarController
 
         if let tabViewController = tabController.viewControllers {
-            let navController = tabViewController[0] as! UINavigationController
+            var navController = tabViewController[0] as! UINavigationController
             let controller = navController.viewControllers.first as! CurrentLocationViewController
             controller.managedObjectContext = managedObjectContext
+            
+            navController = tabViewController[1] as! UINavigationController
+            let controller2 = navController.viewControllers.first as! LocationsViewController
+            controller2.managedObjectContext = managedObjectContext
         }
+        
+        listenForFatalCoreDataNotifications()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -69,5 +75,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
+    func listenForFatalCoreDataNotifications() {
+        NotificationCenter.default.addObserver(forName: CoreDataSaveFiledNotification, object: nil, queue: OperationQueue.main, using: {
+            notification in
+            let message = "fatal error"
+            
+            let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { _ in
+                let exception = NSException(name: NSExceptionName.internalInconsistencyException, reason: "Fatal Core Data Error", userInfo: nil)
+                exception.raise()
+            }
+            alert.addAction(action)
+            
+            let tabController = self.window!.rootViewController!
+            tabController.present(alert, animated: true, completion: nil)
+        })
+    }
 }
 
