@@ -89,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1412" y="-315.29235382308849"/>
+            <point key="canvasLocation" x="1164" y="-310"/>
         </scene>
         <!--Tag Location-->
         <scene sceneID="fVi-Sh-gug">
@@ -299,7 +299,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pi0-Z3-xXL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2152.8000000000002" y="-315.29235382308849"/>
+            <point key="canvasLocation" x="1911" y="-315"/>
         </scene>
         <!--Choose Category-->
         <scene sceneID="Jff-UK-8S2">
@@ -378,7 +378,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VgR-6i-UOF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="472.80000000000001" y="-315.29235382308849"/>
+            <point key="canvasLocation" x="474" y="-397"/>
         </scene>
         <!--Locations-->
         <scene sceneID="jtp-8P-Jxm">
@@ -389,7 +389,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationsCell" rowHeight="52" id="eP4-kb-TEH">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationsCell" rowHeight="52" id="eP4-kb-TEH" customClass="LocationCell" customModule="_4MyLocation" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="52"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eP4-kb-TEH" id="Agi-vb-IVB">
@@ -412,6 +412,11 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addressLabel" destination="bZU-jq-9ok" id="DMy-pw-gbt"/>
+                                    <outlet property="descriptionLabel" destination="Dsy-yb-zTY" id="liU-wx-ea7"/>
+                                    <segue destination="T2p-ox-A7N" kind="show" identifier="EditLocation" id="wWV-UU-7fe"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -444,6 +449,9 @@
             <point key="canvasLocation" x="-287" y="415"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="wWV-UU-7fe"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="first" width="30" height="30"/>
     </resources>
