@@ -151,7 +151,7 @@
                             </tableViewSection>
                             <tableViewSection id="o7h-6u-hvc">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" id="X9n-Bn-59c">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" id="X9n-Bn-59c">
                                         <rect key="frame" x="0.0" y="223" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X9n-Bn-59c" id="dIb-3q-WVC">
@@ -165,6 +165,12 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tmu-tF-u6Z">
+                                                    <rect key="frame" x="113" y="10" width="195" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="gEa-zQ-9xc"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -293,13 +299,15 @@
                         <outlet property="categoryLabel" destination="bKM-rN-gHc" id="AHD-AR-urp"/>
                         <outlet property="dateLabel" destination="Boe-gt-ZJX" id="m3K-sl-rka"/>
                         <outlet property="descriptionTextView" destination="jOy-33-HXX" id="l5w-UJ-cuJ"/>
+                        <outlet property="imageHeight" destination="gEa-zQ-9xc" id="zeY-On-M2o"/>
+                        <outlet property="imageView" destination="tmu-tF-u6Z" id="zOX-mx-O3m"/>
                         <outlet property="latitudeLabel" destination="IqL-i9-4QT" id="emL-Lx-HHG"/>
                         <outlet property="longitudeLabel" destination="wnt-Wk-Yau" id="6IM-Vp-aao"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pi0-Z3-xXL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1911" y="-315"/>
+            <point key="canvasLocation" x="2169" y="-310"/>
         </scene>
         <!--Map-->
         <scene sceneID="qlW-NC-eYc">
