@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import CoreData
+import AudioToolbox
 
 class CurrentLocationViewController: UIViewController,
                                     CLLocationManagerDelegate{
@@ -33,11 +34,13 @@ class CurrentLocationViewController: UIViewController,
     
     var timer: Timer?
     var managedObjectContext: NSManagedObjectContext!
+    var soundID: SystemSoundID = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         updateLabels()
+        loadSoundEffect("Sound.caf")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -230,25 +233,17 @@ class CurrentLocationViewController: UIViewController,
     func string(from placemark: CLPlacemark) -> String {
         // 1
         var line1 = ""
-        // 2
-        if let s = placemark.subThoroughfare {
-            line1 += s + " "
-          }
-        // 3
-        if let s = placemark.thoroughfare {
-        line1 += s }
-        // 4
+        line1.add(text: placemark.subThoroughfare, separatedBy: "")
+        line1.add(text: placemark.thoroughfare, separatedBy: " ")
+
         var line2 = ""
-        if let s = placemark.locality {
-            line2 += s + " "
-          }
-        if let s = placemark.administrativeArea {
-            line2 += s + " "
-          }
-        if let s = placemark.postalCode {
-        line2 += s }
-        // 5
-          return line1 + "\n" + line2
+        line2.add(text: placemark.locality, separatedBy: "")
+        line2.add(text: placemark.administrativeArea, separatedBy: " ")
+        line2.add(text: placemark.postalCode, separatedBy: " ")
+        
+        line1.add(text: line2, separatedBy: "\n")
+
+        return line1
     }
     
     @objc func didTimeOut() {
@@ -258,6 +253,26 @@ class CurrentLocationViewController: UIViewController,
             lastGeocodingError = NSError(domain: "MyLocationsErrorDomain", code: 1, userInfo: nil)
             updateLabels()
         }
+    }
+    
+    func loadSoundEffect(_ name: String) {
+        if let path = Bundle.main.path(forResource: name, ofType: nil) {
+            let fileUrl = URL(fileURLWithPath: path, isDirectory: false)
+            let error = AudioServicesCreateSystemSoundID(fileUrl as CFURL, &soundID)
+            
+            if error != kAudioServicesNoError {
+                print("Error code \(error) sound \(path)")
+            }
+        }
+    }
+    
+    func unloadSoundEffect() {
+        AudioServicesDisposeSystemSoundID(soundID)
+        soundID = 0
+    }
+    
+    func playSoundEffect() {
+        AudioServicesPlaySystemSound(soundID)
     }
 }
 

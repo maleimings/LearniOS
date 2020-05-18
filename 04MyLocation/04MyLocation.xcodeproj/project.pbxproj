@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		E31300C52462EDDF0087A99D /* CategoryPickerViewCOntroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31300C42462EDDF0087A99D /* CategoryPickerViewCOntroller.swift */; };
+		E321F7902472B2EE006C00F6 /* String+AddText.swift in Sources */ = {isa = PBXBuildFile; fileRef = E321F78F2472B2EE006C00F6 /* String+AddText.swift */; };
+		E321F7922472B916006C00F6 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E321F7912472B916006C00F6 /* MyTabBarController.swift */; };
+		E321F7942472B9BA006C00F6 /* MyImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E321F7932472B9BA006C00F6 /* MyImagePickerController.swift */; };
 		E32DF6B62469781A00EE2755 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32DF6B52469781A00EE2755 /* LocationCell.swift */; };
 		E3316C632466E995003A9633 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3316C622466E995003A9633 /* LocationsViewController.swift */; };
 		E3316C652466F11F003A9633 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3316C642466F11F003A9633 /* Location+CoreDataProperties.swift */; };
@@ -30,6 +33,9 @@
 
 /* Begin PBXFileReference section */
 		E31300C42462EDDF0087A99D /* CategoryPickerViewCOntroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewCOntroller.swift; sourceTree = "<group>"; };
+		E321F78F2472B2EE006C00F6 /* String+AddText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+AddText.swift"; sourceTree = "<group>"; };
+		E321F7912472B916006C00F6 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
+		E321F7932472B9BA006C00F6 /* MyImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImagePickerController.swift; sourceTree = "<group>"; };
 		E32DF6B52469781A00EE2755 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		E3316C622466E995003A9633 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		E3316C642466F11F003A9633 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -67,6 +73,7 @@
 		E3D68FCD245EFFFC00A3E33F = {
 			isa = PBXGroup;
 			children = (
+				E321F78F2472B2EE006C00F6 /* String+AddText.swift */,
 				E3D68FD8245EFFFC00A3E33F /* 04MyLocation */,
 				E3D68FD7245EFFFC00A3E33F /* Products */,
 				E3DF1D71246C2B67004B0979 /* Frameworks */,
@@ -92,6 +99,8 @@
 				E3D68FDD245EFFFC00A3E33F /* CurrentLocationViewController.swift */,
 				E3D68FDF245EFFFC00A3E33F /* SecondViewController.swift */,
 				E3D68FE1245EFFFC00A3E33F /* Main.storyboard */,
+				E321F7932472B9BA006C00F6 /* MyImagePickerController.swift */,
+				E321F7912472B916006C00F6 /* MyTabBarController.swift */,
 				E3DB149B247174DA00DBA20C /* UIImage+Resize.swift */,
 				E3DF1D74246C2C79004B0979 /* MapViewController.swift */,
 				E3316C622466E995003A9633 /* LocationsViewController.swift */,
@@ -190,6 +199,8 @@
 				E3D68FDE245EFFFC00A3E33F /* CurrentLocationViewController.swift in Sources */,
 				E31300C52462EDDF0087A99D /* CategoryPickerViewCOntroller.swift in Sources */,
 				E32DF6B62469781A00EE2755 /* LocationCell.swift in Sources */,
+				E321F7922472B916006C00F6 /* MyTabBarController.swift in Sources */,
+				E321F7942472B9BA006C00F6 /* MyImagePickerController.swift in Sources */,
 				E3316C652466F11F003A9633 /* Location+CoreDataProperties.swift in Sources */,
 				E3357B572464449E00250570 /* Functions.swift in Sources */,
 				E3D68FDA245EFFFC00A3E33F /* AppDelegate.swift in Sources */,
@@ -201,6 +212,7 @@
 				E38FD6AC246199B6002CE59C /* LocationDetailsViewController.swift in Sources */,
 				E3316C632466E995003A9633 /* LocationsViewController.swift in Sources */,
 				E3DF1D75246C2C79004B0979 /* MapViewController.swift in Sources */,
+				E321F7902472B2EE006C00F6 /* String+AddText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
