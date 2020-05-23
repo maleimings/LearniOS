@@ -13,6 +13,8 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var searchResults = [SearchResult]()
+    var isLoading = false
+    var hasSearched = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,9 @@ class SearchViewController: UIViewController {
         let nothingCellNib = UINib(nibName: TableView.CellIdentifiers.nothingFoundCell, bundle: nil)
         
         tableView.register(nothingCellNib, forCellReuseIdentifier: TableView.CellIdentifiers.nothingFoundCell)
+        
+        let loadingCellNib = UINib(nibName: TableView.CellIdentifiers.loadingCell, bundle: nil)
+        tableView.register(loadingCellNib, forCellReuseIdentifier: TableView.CellIdentifiers.loadingCell)
     }
 }
 
@@ -35,18 +40,25 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if !searchBar.text!.isEmpty {
             searchBar.resignFirstResponder()
-            
+            isLoading = true
+            hasSearched = true
             searchResults = []
-            
-            let url = iTunesURL(searchText: searchBar.text!)
-            
-            print("URL is \(url)")
-            
-            if let data = performStoreRequest(wiht: url) {
-                searchResults = parse(data: data)
-                searchResults.sort(by: <)
-            }
             tableView.reloadData()
+            
+            let queue = DispatchQueue.global()
+
+            let url = iTunesURL(searchText: searchBar.text!)
+
+            queue.async {
+                if let data = self.performStoreRequest(wiht: url) {
+                    self.searchResults = self.parse(data: data)
+                    self.searchResults.sort(by: <)
+                }
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                    self.tableView.reloadData()
+                }
+            }
         }
     }
     
@@ -97,8 +109,9 @@ extension SearchViewController: UISearchBarDelegate {
 extension SearchViewController: UITableViewDelegate,
                                 UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if searchResults.count == 0 {
+        if !hasSearched {
+            return 0
+        } else if isLoading || searchResults.count == 0 {
             return 1
         }
         return searchResults.count
@@ -109,15 +122,21 @@ extension SearchViewController: UITableViewDelegate,
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        if searchResults.count == 0 {
+        if isLoading || searchResults.count == 0 {
             return nil
         } else {
             return indexPath
         }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {               
-        if searchResults.count == 0 {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if isLoading {
+            let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.loadingCell, for: indexPath)
+            
+            let spinner = cell.viewWithTag(100) as! UIActivityIndicatorView
+            spinner.startAnimating()
+            return cell
+        } else if searchResults.count == 0 {
             return tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.nothingFoundCell, for: indexPath)
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.searchResultCell, for: indexPath) as! SearchResultCell
@@ -137,6 +156,7 @@ extension SearchViewController: UITableViewDelegate,
         struct CellIdentifiers {
             static let searchResultCell = "SearchResultCell"
             static let nothingFoundCell = "NothingFoundCell"
+            static let loadingCell = "LoadingCell"
         }
     }
 }
