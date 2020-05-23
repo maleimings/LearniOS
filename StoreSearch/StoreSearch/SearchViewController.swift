@@ -15,6 +15,7 @@ class SearchViewController: UIViewController {
     var searchResults = [SearchResult]()
     var isLoading = false
     var hasSearched = false
+    var dataTask: URLSessionDataTask?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,43 +41,48 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if !searchBar.text!.isEmpty {
             searchBar.resignFirstResponder()
+            dataTask?.cancel()
             isLoading = true
             hasSearched = true
             searchResults = []
             tableView.reloadData()
-            
-            let queue = DispatchQueue.global()
 
             let url = iTunesURL(searchText: searchBar.text!)
-
-            queue.async {
-                if let data = self.performStoreRequest(wiht: url) {
-                    self.searchResults = self.parse(data: data)
-                    self.searchResults.sort(by: <)
+            let session = URLSession.shared
+            dataTask = session.dataTask(with: url, completionHandler: {
+                data, response, error in
+                if let error = error as NSError?, error.code == -999 {
+                    return
+                } else if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+                    if let data = data {
+                        self.searchResults = self.parse(data: data)
+                        self.searchResults.sort(by: <)
+                        DispatchQueue.main.async {
+                            self.isLoading = false
+                            self.tableView.reloadData()
+                        }
+                        return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.hasSearched = false
+                        self.isLoading = false
+                        self.tableView.reloadData()
+                        self.showNetworkError()
+                    }
+                } else {
+                    print("Failed \(response!)")
                 }
-                DispatchQueue.main.async {
-                    self.isLoading = false
-                    self.tableView.reloadData()
-                }
-            }
+            })
+            dataTask?.resume()
         }
     }
     
     func iTunesURL(searchText: String) -> URL {
         let encodedText = searchText.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlUserAllowed)!
-        let urlString = String(format: "https://itunes.apple.com/search?term=%@", encodedText)
+        let urlString = String(format: "https://itunes.apple.com/search?term=%@&limit=200", encodedText)
         
         return URL(string: urlString)!
-    }
-    
-    func performStoreRequest(wiht url: URL) -> Data? {
-        do {
-             return try Data(contentsOf: url)
-        } catch {
-            print("Download error \(error.localizedDescription)")
-            showNetworkError()
-            return nil
-        }
     }
     
     func showNetworkError() {
