@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E32BF239248532FA0082CC26 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32BF238248532FA0082CC26 /* DetailViewController.swift */; };
 		E37882622474125600E6251E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37882612474125600E6251E /* AppDelegate.swift */; };
 		E37882642474125600E6251E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37882632474125600E6251E /* SceneDelegate.swift */; };
 		E37882662474125600E6251E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37882652474125600E6251E /* SearchViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E32BF238248532FA0082CC26 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E378825E2474125600E6251E /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E37882612474125600E6251E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E37882632474125600E6251E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				E37E17532475703200F26EDD /* SearchResultCell.swift */,
+				E32BF238248532FA0082CC26 /* DetailViewController.swift */,
 				E37882612474125600E6251E /* AppDelegate.swift */,
 				E37882632474125600E6251E /* SceneDelegate.swift */,
 				E37882652474125600E6251E /* SearchViewController.swift */,
@@ -161,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E32BF239248532FA0082CC26 /* DetailViewController.swift in Sources */,
 				E37882662474125600E6251E /* SearchViewController.swift in Sources */,
 				E37882622474125600E6251E /* AppDelegate.swift in Sources */,
 				E3E451D02476B70A008B4395 /* NothingFoundCell.swift in Sources */,
