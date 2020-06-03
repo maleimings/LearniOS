@@ -47,6 +47,7 @@
                                                 <segment title="Software"/>
                                                 <segment title="E-books"/>
                                             </segments>
+                                            <color key="selectedSegmentTintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <connections>
                                                 <action selector="segmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Tvi-hH-sEy"/>
                                             </connections>
@@ -94,9 +95,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2J-PR-8bz">
-                                        <rect key="frame" x="23" y="96" width="193" height="21"/>
+                                        <rect key="frame" x="23" y="96" width="209" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
