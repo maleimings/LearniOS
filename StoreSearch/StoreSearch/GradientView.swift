@@ -18,6 +18,7 @@ class GradientView: UIView {
     required init?(coder aCoder: NSCoder) {
         super.init(coder: aCoder)
         backgroundColor = UIColor.clear
+        autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
     
     override func draw(_ rect: CGRect) { // 1
