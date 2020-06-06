@@ -80,6 +80,7 @@ class SearchViewController: UIViewController {
         landscapeVC = storyboard!.instantiateViewController(identifier: "LandscapeViewController") as? LandscapeViewController
         
         if let controller = landscapeVC {
+            controller.searchResults = searchResults
             controller.view.frame = view.bounds
             
             view.addSubview(controller.view)
