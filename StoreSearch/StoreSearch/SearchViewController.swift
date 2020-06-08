@@ -45,13 +45,15 @@ class SearchViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowDetail" {
-            let detailViewController = segue.destination as! DetailViewController
             
-            let indexPath = sender as! IndexPath
-            
-            let searchResult = search.searchResults[indexPath.row]
-            
-            detailViewController.searchResult = searchResult
+            if case .results(let list) = search.state {
+                let detailViewController = segue.destination as! DetailViewController
+                
+                let indexPath = sender as! IndexPath
+                let searchResult = list[indexPath.row]
+                
+                detailViewController.searchResult = searchResult
+            }
         }
     }
     
@@ -111,8 +113,7 @@ extension SearchViewController: UISearchBarDelegate {
         performSearch()
     }
     
-    func performSearch() {
-        
+    func performSearch() {        
         if let category = Search.Category(rawValue: segmentedControl.selectedSegmentIndex) {
             search.preformSearch(for: searchBar.text!, category: category, completion: { success in
                 if !success {
@@ -120,6 +121,7 @@ extension SearchViewController: UISearchBarDelegate {
                 }
                 
                 self.tableView.reloadData()
+                self.landscapeVC?.searchResultReceived()
                 
             })
             tableView.reloadData()
@@ -147,15 +149,16 @@ extension SearchViewController: UITableViewDelegate,
                                 UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if search.isLoading {
-            return 1
-        } else if !search.hasSearched {
-            return 0
-        } else if search.searchResults.count == 0 {
-            return 1
-        } else {
-            return search.searchResults.count
-        }
+        switch search.state {
+            case .notSearchedYet:
+                return 0
+            case .loading:
+                return 1
+            case .noResults:
+                return 1
+            case .results(let list):
+                return list.count
+            }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -164,27 +167,31 @@ extension SearchViewController: UITableViewDelegate,
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        if search.isLoading || search.searchResults.count == 0 {
+        switch search.state {
+        case .notSearchedYet, .loading, .noResults:
             return nil
-        } else {
+        case .results:
             return indexPath
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if search.isLoading {
+        
+        switch search.state {
+        case .notSearchedYet:
+            fatalError("Should never get here")
+        case .loading:
             let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.loadingCell, for: indexPath)
-            
             let spinner = cell.viewWithTag(100) as! UIActivityIndicatorView
             spinner.startAnimating()
             return cell
-        } else if search.searchResults.count == 0 {
+        case .noResults:
             return tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.nothingFoundCell, for: indexPath)
-        } else {
+        case .results(let list):
             let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.searchResultCell, for: indexPath) as! SearchResultCell
-            let searchResult = search.searchResults[indexPath.row]
-            cell.configure(for: searchResult)
             
+            let searchResult = list[indexPath.row]
+            cell.configure(for: searchResult)
             return cell
         }
     }
