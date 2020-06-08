@@ -19,6 +19,7 @@
 		E378827624741BF800E6251E /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E378827524741BF800E6251E /* SearchResult.swift */; };
 		E37E1750247569F400F26EDD /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E37E174F247569F400F26EDD /* SearchResultCell.xib */; };
 		E37E17542475703200F26EDD /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37E17532475703200F26EDD /* SearchResultCell.swift */; };
+		E3B8B006248E698E0058FC35 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B8B005248E698E0058FC35 /* Search.swift */; };
 		E3B99C2E2487DA2200262A11 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B99C2D2487DA2200262A11 /* GradientView.swift */; };
 		E3B99C302487DCD900262A11 /* BounceAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B99C2F2487DCD900262A11 /* BounceAnimationController.swift */; };
 		E3B99C322487DE4200262A11 /* SlideOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B99C312487DE4200262A11 /* SlideOutAnimationController.swift */; };
@@ -44,6 +45,7 @@
 		E378827524741BF800E6251E /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		E37E174F247569F400F26EDD /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		E37E17532475703200F26EDD /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		E3B8B005248E698E0058FC35 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		E3B99C2D2487DA2200262A11 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		E3B99C2F2487DCD900262A11 /* BounceAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceAnimationController.swift; sourceTree = "<group>"; };
 		E3B99C312487DE4200262A11 /* SlideOutAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutAnimationController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				E32BF238248532FA0082CC26 /* DetailViewController.swift */,
 				E3B99C312487DE4200262A11 /* SlideOutAnimationController.swift */,
 				E3439DB8248920D7003C1620 /* LandscapeViewController.swift */,
+				E3B8B005248E698E0058FC35 /* Search.swift */,
 				E3439DBA24892D66003C1620 /* FadeOutAnimationController.swift */,
 				E3B99C2D2487DA2200262A11 /* GradientView.swift */,
 				E37882612474125600E6251E /* AppDelegate.swift */,
@@ -195,6 +198,7 @@
 				E3439DB9248920D7003C1620 /* LandscapeViewController.swift in Sources */,
 				E3439DBB24892D66003C1620 /* FadeOutAnimationController.swift in Sources */,
 				E37882642474125600E6251E /* SceneDelegate.swift in Sources */,
+				E3B8B006248E698E0058FC35 /* Search.swift in Sources */,
 				E3B99C302487DCD900262A11 /* BounceAnimationController.swift in Sources */,
 				E37E17542475703200F26EDD /* SearchResultCell.swift in Sources */,
 			);
