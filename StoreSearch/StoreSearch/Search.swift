@@ -55,6 +55,7 @@ class Search {
                 }
                 
                 DispatchQueue.main.async {
+                    self.state = newState
                     completion(success)
                 }
             })

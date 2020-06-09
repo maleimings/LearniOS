@@ -38,11 +38,12 @@
                     <connections>
                         <outlet property="pageControl" destination="2gt-vR-U0P" id="fmC-S2-268"/>
                         <outlet property="scrollView" destination="cxA-sX-9qU" id="Mcj-Nb-EE9"/>
+                        <segue destination="u6e-I6-SWg" kind="presentation" identifier="ShowDetail" id="nQx-9A-9TD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AnJ-QN-IQo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-922.48875562218893" y="200.80000000000001"/>
+            <point key="canvasLocation" x="-299" y="633"/>
         </scene>
         <!--Search-->
         <scene sceneID="tne-QT-ifu">
@@ -105,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="137.18140929535232"/>
+            <point key="canvasLocation" x="-279" y="-463"/>
         </scene>
         <!--Detail-->
         <scene sceneID="e7X-Mo-Jgl">
@@ -204,6 +205,9 @@
             <point key="canvasLocation" x="808.79999999999995" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="nQx-9A-9TD"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="CloseButton" width="15" height="15"/>
     </resources>
