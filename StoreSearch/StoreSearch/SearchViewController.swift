@@ -131,9 +131,9 @@ extension SearchViewController: UISearchBarDelegate {
 
     
     func showNetworkError() {
-        let alert = UIAlertController(title: "Whoops", message: "cannot access iTunes", preferredStyle: .alert)
+        let alert = UIAlertController(title: NSLocalizedString("Whoops", comment: "Search View: Whoops"), message: NSLocalizedString("cannot access iTunes", comment: "Search View: cannot access iTunes"), preferredStyle: .alert)
         
-        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        let action = UIAlertAction(title: NSLocalizedString("Ok", comment: "Search View: Ok"), style: .default, handler: nil)
         
         alert.addAction(action)
         

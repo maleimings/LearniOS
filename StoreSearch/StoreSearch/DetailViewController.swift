@@ -75,7 +75,7 @@ class DetailViewController: UIViewController {
         formatter.currencyCode = searchResult.currency
         let priceText: String
         if searchResult.price == 0 {
-            priceText = "Free"
+            priceText = NSLocalizedString("Free", comment: "Result: Free")
         } else if let text = formatter.string(
             from: searchResult.price as NSNumber) { priceText = text
         } else {
