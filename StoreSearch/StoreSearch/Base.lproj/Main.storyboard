@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sol-ns-tQo">
     <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -7,6 +7,35 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="UmS-3A-6uq">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zJg-ld-h1d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController id="lRd-sw-9oa" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gt3-ur-9qh">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="u6e-I6-SWg" kind="relationship" relationship="rootViewController" id="pBz-LZ-Dxt"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-570" y="133"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="Ny0-vV-whp">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uwn-Rh-kNY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <splitViewController id="sol-ns-tQo" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="masterViewController" id="2qM-dG-Tau"/>
+                        <segue destination="lRd-sw-9oa" kind="relationship" relationship="detailViewController" id="tpQ-SC-xKb"/>
+                    </connections>
+                </splitViewController>
+            </objects>
+            <point key="canvasLocation" x="-1614" y="-245"/>
+        </scene>
         <!--Landscape-->
         <scene sceneID="Cw3-lc-6qD">
             <objects>
@@ -43,11 +72,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AnJ-QN-IQo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-299" y="633"/>
+            <point key="canvasLocation" x="809" y="-642"/>
         </scene>
         <!--Search-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController title="Search" id="BYZ-38-t0r" customClass="SearchViewController" customModule="StoreSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
@@ -104,9 +134,8 @@
                         <segue destination="u6e-I6-SWg" kind="presentation" identifier="ShowDetail" id="RZT-ng-R18"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-279" y="-463"/>
+            <point key="canvasLocation" x="-570" y="-643"/>
         </scene>
         <!--Detail-->
         <scene sceneID="e7X-Mo-Jgl">
@@ -190,6 +219,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="4ic-Fk-i2O"/>
                     </view>
+                    <navigationItem key="navigationItem" id="jfi-5V-tP1"/>
                     <connections>
                         <outlet property="artistNameLabel" destination="88B-5e-yY1" id="YRr-fb-Dx1"/>
                         <outlet property="artworkImageView" destination="bTR-nj-aSB" id="bw3-dO-wFK"/>
@@ -202,11 +232,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5XA-2e-ld1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="808.79999999999995" y="133.5832083958021"/>
+            <point key="canvasLocation" x="311" y="133"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nQx-9A-9TD"/>
+        <segue reference="pBz-LZ-Dxt"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="CloseButton" width="15" height="15"/>

@@ -12,10 +12,10 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    private let search = Search()
     
     var landscapeVC: LandscapeViewController?
-    
-    private let search = Search()
+    weak var splitViewDetail: DetailViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +41,8 @@ class SearchViewController: UIViewController {
         segmentedControl.setTitleTextAttributes(normalTextAttributes, for: .normal)
         segmentedControl.setTitleTextAttributes(selectedTextAttributes, for: .selected)
         segmentedControl.setTitleTextAttributes(selectedTextAttributes, for: .highlighted)
+        
+        title = NSLocalizedString("Search", comment: "split view master button")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

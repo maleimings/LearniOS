@@ -17,6 +17,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        customizeAppearance()
+        detailVC.navigationItem.leftBarButtonItem = splitVC.displayModeButtonItem
+        searchVC.splitViewDetail = detailVC
+        
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
@@ -46,6 +50,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+    }
+    
+    // MARK:- Helper Methods
+    func customizeAppearance() {
+      let barTintColor = UIColor(red: 20/255, green: 160/255, blue: 160/255, alpha: 1)
+      UISearchBar.appearance().barTintColor = barTintColor
+    }
+    
+    // MARK:- Properties
+    var splitVC: UISplitViewController {
+      return window!.rootViewController as! UISplitViewController
+    }
+    
+    var searchVC: SearchViewController {
+      return splitVC.viewControllers.first as! SearchViewController
+    }
+    
+    var detailNavController: UINavigationController {
+      return splitVC.viewControllers.last as! UINavigationController
+    }
+    
+    var detailVC: DetailViewController {
+      return detailNavController.topViewController as! DetailViewController
     }
 
 
