@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E326017D24950DE500E7943F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326017C24950DE500E7943F /* MenuViewController.swift */; };
 		E32BF239248532FA0082CC26 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32BF238248532FA0082CC26 /* DetailViewController.swift */; };
 		E3439DB9248920D7003C1620 /* LandscapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3439DB8248920D7003C1620 /* LandscapeViewController.swift */; };
 		E3439DBB24892D66003C1620 /* FadeOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3439DBA24892D66003C1620 /* FadeOutAnimationController.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E326017C24950DE500E7943F /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		E32BF238248532FA0082CC26 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E3439DB8248920D7003C1620 /* LandscapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeViewController.swift; sourceTree = "<group>"; };
 		E3439DBA24892D66003C1620 /* FadeOutAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeOutAnimationController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				E3E451CE2476B70A008B4395 /* NothingFoundCell.swift */,
 				E3DF6A842491104D008C23B2 /* NothingFoundCell.xib */,
 				E37882672474125600E6251E /* Main.storyboard */,
+				E326017C24950DE500E7943F /* MenuViewController.swift */,
 				E36CC73F248657AC005BE345 /* DimmingPresentationController.swift */,
 				E3B99C2F2487DCD900262A11 /* BounceAnimationController.swift */,
 				E378827524741BF800E6251E /* SearchResult.swift */,
@@ -209,6 +212,7 @@
 				E3CE3F13247C0162005BF5AF /* UIImageView+DownloadImage.swift in Sources */,
 				E3D6E285247956DE000D59FD /* LoadingCell.swift in Sources */,
 				E3439DB9248920D7003C1620 /* LandscapeViewController.swift in Sources */,
+				E326017D24950DE500E7943F /* MenuViewController.swift in Sources */,
 				E3439DBB24892D66003C1620 /* FadeOutAnimationController.swift in Sources */,
 				E37882642474125600E6251E /* SceneDelegate.swift in Sources */,
 				E3B8B006248E698E0058FC35 /* Search.swift in Sources */,
